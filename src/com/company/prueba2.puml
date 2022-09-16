@@ -1,0 +1,56 @@
+@startuml
+hide circle
+
+
+class ServicioMusica{
+    dominio: Musica
+    visualizarCatalogoPorGenero()
+    visualizarCatalogoPorArtista()
+    visualizarCatalogoPorAlbum()
+    visualizarCatalogoPorNombreCancion()
+    visualizarCatalogoPorDuracion()
+    visualizarCatalogoPorPopularidad()
+}
+class ComparadorPorDuracion{
+    compare()
+}
+class ComparadorPorMusica{
+    compare()
+}
+class ComparadorPorNombreCancion{
+    compare()
+}
+class ComparadorPorArtista{
+    compare()
+}
+class ComparadorPorAlbum{
+    compare()
+}
+class ComparadorPorPopularidad{
+        compare()
+}
+
+class Musica{
+    generoMusica : String
+    artista : String
+    album : String
+    nombreDeCancion : String
+    duracion
+    popularidad
+    getGeneroMusica()
+    getArtista()
+    getAlbum()
+    getNombreDeCancion()
+
+
+}
+
+ServicioMusica --> Musica
+ServicioMusica --> ComparadorPorAlbum
+ServicioMusica --> ComparadorPorArtista
+ServicioMusica --> ComparadorPorDuracion
+ServicioMusica --> ComparadorPorMusica
+ServicioMusica --> ComparadorPorNombreCancion
+ServicioMusica --> ComparadorPorPopularidad
+
+@enduml
